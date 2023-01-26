@@ -1,7 +1,7 @@
 Bayesian Modeling with Spatial Curvature Processes
 ================
 
-Aritra Halder, Sudipto Banerjee, Dipak K. Dey
+## Aritra Halder, Sudipto Banerjee, Dipak K. Dey
 =================
 
 This GitHub repository contains a suggested template structure for authors who
