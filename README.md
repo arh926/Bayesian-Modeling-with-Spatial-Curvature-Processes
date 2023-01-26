@@ -26,6 +26,6 @@ The code contained in this repository is instrumental in producing the tables an
 The subroutines in https://github.com/arh926/spWombling/ R-package contain detailed descriptions. The README file also shows workflow for estimating gradients and wombling measures under Pattern 1.
 
 ## Instructions for use
-For running each of the above scripts successfully, installing the R-package from https://github.com/arh926/spWombling/ is advised. Instructions for installation is provided in the README.
+For running each of the above scripts successfully, installing the R-package from https://github.com/arh926/spWombling/ is advised. Instructions for installation are provided in the README.
 
 
