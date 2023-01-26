@@ -153,12 +153,14 @@ grid.points <- grid.points[!is.na(tmp),]
 
 samples <- (nburn+1):niter
 gradient_est <- spatial_gradient(coords=coords,
+                                 cahin = mc_sp,
                                  grid.points = grid.points,
                                  samples = samples,
-                                 post_mcmc = mc_sp,
                                  cov.type = cov.type,
                                  ncores=5,
-                                 nbatch = 100)
+                                 nbatch = 100,
+                                 nburn = nburn,
+                                 niter = niter)
 grad.s1.hpd <- data.frame(gradient_est$grad1.est)
 grad.s1.hpd$sig <- apply(grad.s1.hpd,1,function(x){
   if(x[2]>0 & x[3]>0) return (1)
@@ -418,3 +420,4 @@ subset.points <- list(subset.points.1@lines[[1]]@Lines[[1]]@coords,
                       subset.points.2@lines[[1]]@Lines[[1]]@coords,
                       subset.points.2@lines[[1]]@Lines[[2]]@coords)
 
+# Use cwomb-riemann or bayes_cwomb to compute wombling measures on each curve

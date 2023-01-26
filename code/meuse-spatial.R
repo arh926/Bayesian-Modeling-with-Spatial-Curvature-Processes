@@ -253,13 +253,15 @@ meuse.riv.win <- meuse.riv[meuse.riv.window,]
 
 samples <- (nburn+1):niter
 gradient_est1 <- lapply(res_mc_sp, function(x){
-  spatial_gradient(coords=coords,
+  spatial_gradient(coords=coords, 
+                   chain = x,
                    grid.points = meuse.riv.win/10,
-                   post_mcmc = x,
                    cov.type = cov.type,
-                   ncores=5,
+                   samples= samples,
+                   ncores = 5,
                    nbatch = 100,
-                   return.mcmc = T)
+                   nburn = nburn,
+                   niter = niter)
 })
 # save(gradient_est1, file="~/Desktop/spatiotemporal_gradient/space/NETemp-level4-gradients.RData")
 # save(gradient_est, file="~/Desktop/spatiotemporal_gradient/space/NETemp-level4-gradients.RData")
