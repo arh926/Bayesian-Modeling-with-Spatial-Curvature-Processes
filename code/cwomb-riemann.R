@@ -6,12 +6,13 @@ gradient_est1 <- list()
 for(i in 1:length(subset.points)){
   grid.points <- subset.points[[i]]
   gradient_est1[[i]] <- spatial_gradient(coords=coords,
+                                         chain = mc_sp,
                                          grid.points = grid.points,#*100, for boston.shp
-                                         post_mcmc = mc_sp,
                                          cov.type = cov.type,
                                          ncores=5,
                                          nbatch = 100,
-                                         return.mcmc = T)
+                                         nburn = nburn,
+                                         niter= niter)
   cat("Boundary:",i,"\n")
 }
 # save(gradient_est, file="~/Desktop/spatiotemporal_gradient/space/NETemp-level4-gradients.RData")
