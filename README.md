@@ -2,20 +2,8 @@ Bayesian Modeling with Spatial Curvature Processes
 ================
 
 ## Aritra Halder, Sudipto Banerjee, Dipak K. Dey
-=================
 
-This GitHub repository contains a suggested template structure for authors who
-submit to JASA (either Applications and Case Studies or Theory and
-Methods) to include materials to reproduce analyses, visualizations, and
-tables.
-
-We provide this template as a default structure that we (the JASA Associate Editors of Reproducibility) think could be
-useful for many projects, either as is or with modifications by authors.
-However, the template is intended to be helpful and is by no means
-required of authors. Authors should consult [our reproducibility
-guide](https://jasa-acs.github.io/repro-guide) for details on what is
-required of reproducibility materials submitted with JASA revisions (not
-required upon initial submission).
+This GitHub repository contains necessary code/scripts required to reproduce the results in, "Bayesian Modeling with Spatial Curvature Processes". The required sub-routines to reproduce the analysis can be found in \url{https://github.com/arh926/spWombling}
 
 ## Why is a template repository useful?
 
@@ -152,14 +140,3 @@ a link to an image in a standard online registry, such as DockerHub.
 
 ## References
 
-Gentleman, Robert, and Duncan Temple Lang. “[Statistical Analyses and
-Reproducible
-Research](http://biostats.bepress.com/cgi/viewcontent.cgi?article=1001&context=bioconductor).”
-(2004).
-
-Gentleman, Robert. “[Reproducible research: a bioinformatics case
-study](https://www.degruyter.com/document/doi/10.2202/1544-6115.1034/html).”
-Statistical applications in genetics and molecular biology 4.1 (2005).
-
-Marwick, Ben, and Bryan, Jennifer, and Attali, Dean, and Hollister,
-Jeffrey W. [rrrpkg Github Page](https://github.com/ropensci/rrrpkg).
