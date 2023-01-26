@@ -3,123 +3,29 @@ Bayesian Modeling with Spatial Curvature Processes
 
 ## Aritra Halder, Sudipto Banerjee, Dipak K. Dey
 
-This GitHub repository contains necessary code/scripts required to reproduce the results in, "Bayesian Modeling with Spatial Curvature Processes". The required sub-routines to reproduce the analysis can be found in https://github.com/arh926/spWombling. 
+This GitHub repository contains necessary code/scripts required to reproduce the results in, "Bayesian Modeling with Spatial Curvature Processes". The required sub-routines to reproduce the analysis can be found in https://github.com/arh926/spWombling. The repository also outlines a workflow using a simulated dataset.
+
+## Data
+
+The manuscript uses three datasets, (i) Boston Housing Data (ii) Meuse River Data (iii) Temperatures in the Northeastern US which are available in .Rda format in the arh926/spWombling/data folder. They can also be independently accessed through R-packages `spData` and `spBayes`.
 
 
-## How does the process work?
+## Code
+The code contained in this repository is instrumental in producing the tables and plots in the manuscript. We provide brief descriptions:
 
-### Step 1
+sim_sp_final.R: This is the script that, upon replication, is responsible for producing the Tables S1 and S2 in the online Supplement that documents simulations that assess the accuracy of estimated gradients and curvature. Script for generating plots for gradients, curvature and other differential geometric constructs are also included in the script. Although only Pattern 1 is highlighted, Pattern 2 is commented out and can be run if required. The script concludes by computing wombling measures for curves shown in Pattern 1 producing Table 1 of manuscript.
 
-Author(s) can create a public GitHub repository in their own GitHub account
-by using this template repository. This template contains a basic 
-skeletal structure to help authors structure their code and analyses for their 
-JASA publication. Creating a repository with the template can be done in the following way: 
+meuse-spatial.R: This produces the application results for Meuse River data (second part of Section 6). This contains the full application, including computation of wombling measures.
 
-Click on the "Use this template" button for [this GitHub template repository](https://github.com/jasa-acs/repro-template). (You'll need to be signed in to a GitHub account in order to see the button.)
+boston-spatial.R: This produces the application results for Boston Housing Data (first part of Section 6). This concludes with outlining curves of interest  for the dataset which can then be used as an input in bayes_cwomb.R (in the package) or cwomb-riemann.R (provided) to compute wombling measures shown in the paper.
 
-![Click template button](https://docs.github.com/assets/cb-36544/images/help/repository/use-this-template-button.png)
+netemp-spatial.R: This produces the application results for Temperatures in the Northeastern US Data (Supplement). This concludes with outlining curves of interest  for the dataset which can then be used as an input in bayes_cwomb.R or cwomb-riemann.R to compute wombling measures shown in the paper.
 
-From there, author(s) can [follow these instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template). However do not optionally select "**Include all branches**" as you do not need this for your own projects. 
+sim-jasa.R: Contains additional simulation investigating effect of the spatial field's variance on the width of highest posterior density intervals for gradienst and curvature.
 
+The subroutines in https://github.com/arh926/spWombling/ R-package contain detailed descriptions. The README file also shows workflow for estimating gradients and wombling measures under Pattern 1.
 
-### Step 2
+## Instructions for use
+For running each of the above scripts successfully, installing the R-package from https://github.com/arh926/spWombling/ is advised. Instructions for installation is provided in the README.
 
-The author(s) can then directly edit (or replace) the manuscript template files in their own GitHub repository. Author(s) can also add their own data, code, and other files as needed. 
-
-For guidance on getting started with git, we recommend the [Happy with git r](https://happygitwithr.com) tutorials.
-
-**Importantly, the authors should provide an overview of how to carry
-out the analyses presented in their manuscript in the `README.md` of their
-repository, replacing the content in this file.** This overview would
-generally refer to scripts/code files that execute the analyses and are
-placed either in the main directory or the `/code` subdirectory. The
-*Workflow* section of the ACC form should refer to this README.md as
-containing the instructions for how to reproduce the analyses.
-
-### Step 3
-
-Author(s) use `git commit` to track changes over time and use `git push`
-to push changes to a repository on the author(s) personal GitHub
-account.
-
-### Step 4
-
-Author(s) submit a link to their GitHub repository as part of the [JASA
-Reproducibility review process](https://jasa-acs.github.io/repro-guide/),
-required upon submission of an invited revision.
-
-### Step 5
-
-JASA Associate Editors for Reproducibility will review the materials in
-the GitHub repository of the authors and submit a
-reproducibility review as part of the standard JASA review process.
-Authors have the opportunity to respond to the review by making changes
-and pushing their changes to their personal GitHub repository.
-
-### Step 6
-
-Once the manuscript is accepted, the materials in the author(s) personal
-GitHub repository will be copied to the [JASA repository](https://github.com/jasa-acs).
-
-## Reproducibility materials file structure
-
-This template provides a suggested file structure for a JASA submission, but authors are free
-to modify this structure.
-
-The suggested components are as follows. Directories in the submission may have subdirectories to
-further organize the materials.
-
-1.  A `README.md` file - This file gives a short description of the
-    paper and an overview of how to carry out the analyses presented in their manuscript.
-2.  A `manuscript` directory - This directory will generally hold the source files
-    (often LaTeX or Rmd) for the manuscript and any files directly related to the
-    generation of the manuscript, including figure files.
-3.  A `data` directory - This directory will generally hold the real data files 
-    (or facsimile versions of them in place of confidential data) and simulated data files.
-    See `data/README.md` for more details. 
-4.  A `code` directory - This directory will generally hold 
-    source code files that contain the core code to implement the method and various utility/auxiliary functions.
-5.  An `output` directory - This directory will generally hold objects derived
-    from computations, including results of simulations or real data analyses. See `output/README.md` for more details.
-
-## Guidance on the use of reproducible environments
-
-Submissions may include the use of reproducible environments capturing
-state of a machine generating manuscript artifacts and even the
-manuscript itself. Here we discuss two types of reproducible
-environments and their use. Both virtual and package environments may be
-put in the `code` directory.
-
-### Package environments
-
-Package environments capture the set of packages used by a programming
-language needed to generate output. The R programming language has
-`renv`, `switchr` and others to accomplish this, Python has `venv`,
-`conda` and others, and Julia has native support (through the `Pkg`
-package). When submitting these types of environments, the following are
-suggested.
-
-1.  Clearly indicate (in the overall `README.md`) the language(s) used (including version) 
-    and the package environment tool used (e.g., `renv`, `conda`).
-2.  Use a single package environment for all reproducible content.
-3.  Prefer packages from package archives (CRAN, Bioconductor,
-    RForge.net for example).
-4.  If you use packages from a code repository (GitHub, GitLab, etc.)
-    then use a release version if possible, or indicate the commit used. You could also consider
-    forking the repository and providing a release.
-
-### Virtual environments
-
-Virtual environments such as Docker and Singlarity capture
-the entire computing environment in which computations were performed.
-In general, they are a more robust solution, capable of taking a
-“snapshot” of a machine, including any system-level utilities and
-external libraries needed to perform your computations. They have the
-advantage that reproducing materials means running the virtual
-environment, rather than recreating the programming language environment.
-If using a virtual environment, we ask that 
-you provide a definition file (e.g., a Dockerfile) or (perhaps better)
-a link to an image in a standard online registry, such as DockerHub.
-
-## References
 
