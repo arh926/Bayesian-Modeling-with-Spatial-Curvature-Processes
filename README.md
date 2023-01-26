@@ -1,7 +1,7 @@
 Bayesian Modeling with Spatial Curvature Processes
 ================
 
-<## Aritra Halder, Sudipto Banerjee, Dipak K. Dey>
+## Aritra Halder, Sudipto Banerjee, Dipak K. Dey
 
 This GitHub repository contains necessary code/scripts required to reproduce the results in, "Bayesian Modeling with Spatial Curvature Processes". The required sub-routines to reproduce the analysis can be found in https://github.com/arh926/spWombling. The repository also outlines a workflow using a simulated dataset.
 
