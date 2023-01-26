@@ -1,5 +1,1 @@
-Please replace the contents of this file with relevant instructions for your repository or remove this file entirely.
-
-This directory would generally contain source code files that contain the core code to implement the method and various utility/auxiliary functions.
-
-Scripts/code files that execute the overall workflow to carry out an analysis and generate results for the manuscript might be placed in the main directory.
+Contains scripts to reproduce analysis in manuscript. `netemp-spatial.R` and `boston-spatial.R` are partial scripts, only providing required curves for wombling. The measures can be obtained by running `cwomb-riemann.R` or `spWombling::bayes_cwomb.R`.
