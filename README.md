@@ -21,7 +21,7 @@ The code contained in this repository is instrumental in producing the tables an
 
 `netemp-spatial.R`: This produces the application results for Temperatures in the Northeastern US Data (Supplement). This concludes with outlining curves of interest  for the dataset which can then be used as an input in bayes_cwomb.R or cwomb-riemann.R to compute wombling measures shown in the paper.
 
-`sim-jasa.R`: Contains additional simulation investigating effect of the spatial field's variance on the width of highest posterior density intervals for gradienst and curvature.
+`sim-jasa.R`: Contains additional simulation investigating effect of the spatial field's variance on the width of highest posterior density intervals for gradients and curvature estimates.
 
 The subroutines in https://github.com/arh926/spWombling/ R-package contain detailed descriptions. The README file also shows workflow for estimating gradients and wombling measures under Pattern 1.
 
